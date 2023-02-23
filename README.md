@@ -29,14 +29,7 @@ Fibonacci number 3: 2; sleeping...
 Fibonacci number 4: 3; sleeping...
 Fibonacci number 5: 5; sleeping...
 Fibonacci number 6: 8; sleeping...
-^CTraceback (most recent call last):
-  File "/home/pi/workspace/cr-demo/fib.py", line 133, in <module>
-    main()
-  File "/home/pi/workspace/cr-demo/fib.py", line 127, in main
-    fib_number = fib(
-  File "/home/pi/workspace/cr-demo/fib.py", line 45, in fib
-    time.sleep(1)
-KeyboardInterrupt
+^CKeyboardInterrupt, exiting
 ```
 
 And will restart from the latest checkpoint if rerun:
@@ -79,14 +72,7 @@ Fibonacci number 2: 1; sleeping...
 Fibonacci number 3: 2; sleeping...
 Fibonacci number 4: 3; sleeping...
 Fibonacci number 5: 5; sleeping...
-^CTraceback (most recent call last):
-  File "/home/pi/workspace/cr-demo/fib.py", line 133, in <module>
-    main()
-  File "/home/pi/workspace/cr-demo/fib.py", line 127, in main
-    fib_number = fib(
-  File "/home/pi/workspace/cr-demo/fib.py", line 45, in fib
-    time.sleep(1)
-KeyboardInterrupt
+^CKeyboardInterrupt, exiting
 ```
 
 And will restart from the latest checkpoint if rerun:
