@@ -86,3 +86,32 @@ Fibonacci number 9: 34; sleeping...
 Fibonacci number 10: 55
 ```
 
+## Bonus: Podman demo
+
+The following borrows from
+[docker checkpoint](https://docs.docker.com/engine/reference/commandline/checkpoint/)
+for an example to run, but uses Podman.
+
+```shell
+# Start a counting container that runs forever
+sudo podman run --name cr -d busybox /bin/sh -c 'i=0; while true; do echo $i; i=$(expr $i + 1); sleep 1; done'
+
+# Confirm it is running by following its logs
+sudo podman logs -f cr
+
+# Checkpoint the container (which stops it by default)
+sudo podman container checkpoint cr
+
+# Confirm it is no longer running by following its logs
+sudo podman logs -f cr
+
+# Restore the container
+sudo podman container restore cr
+
+# Confirm it is resumed by following its logs
+sudo podman logs -f cr
+
+# Terminate and remove the container
+sudo podman kill cr
+sudo podman rm cr
+```
