@@ -57,16 +57,16 @@ is composed of three files:
    watching and then executes `script.sh`.
 
 ```shell
-# Print the 100th Fibonacci number with 1s sleeps between iterations
+# Print the 10th Fibonacci number with 1s sleeps between iterations
 # Checkpoint to /mnt/pishare/fib-criu-ckpts
-./run.sh
+./run.sh /mnt/pishare/fib-criu-ckpts 10
 ```
 
 As before, the application can be interrupted at any point:
 
 ```shell
-$ ./run.sh
-/usr/bin/python "$(realpath $(dirname $0))/fib.py" 100 --sleepy
+$ ./run.sh /mnt/pishare/fib-criu-ckpts 10
+/usr/bin/python "$(realpath $(dirname $0))/fib.py" 10 --sleepy
 Fibonacci number 1: 1; sleeping...
 Fibonacci number 2: 1; sleeping...
 Fibonacci number 3: 2; sleeping...
@@ -78,11 +78,11 @@ Fibonacci number 5: 5; sleeping...
 And will restart from the latest checkpoint if rerun:
 
 ```shell
-$ ./run.sh
+$ ./run.sh /mnt/pishare/fib-criu-ckpts 10
 Fibonacci number 6: 8; sleeping...
 Fibonacci number 7: 13; sleeping...
 Fibonacci number 8: 21; sleeping...
 Fibonacci number 9: 34; sleeping...
-Fibonacci number 10: 55; sleeping...
+Fibonacci number 10: 55
 ```
 
